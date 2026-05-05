@@ -7,14 +7,32 @@ namespace ZYQ.Demo
 
     public class UIStack
     {
-        private Stack<UIPanel> stack = new();
+        private readonly List<UIPanel> panels = new();
 
-        public void Push(UIPanel panel) => stack.Push(panel);
+        public void Push(UIPanel panel)
+        {
+            if (panel == null)
+                return;
+
+            panels.Remove(panel);
+            panels.Add(panel);
+        }
 
         public UIPanel Pop()
         {
-            if (stack.Count == 0) return null;
-            return stack.Pop();
+            if (panels.Count == 0)
+                return null;
+
+            int lastIndex = panels.Count - 1;
+            UIPanel panel = panels[lastIndex];
+            panels.RemoveAt(lastIndex);
+            return panel;
+        }
+
+        public void Remove(UIPanel panel)
+        {
+            if (panel != null)
+                panels.Remove(panel);
         }
     }
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using LitMotion;
-using LitMotion.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -314,35 +313,37 @@ namespace ZYQ.Demo
             {
                 if (collapseBtnRect != null)
                 {
+                    MotionHandle findViewMotion = LMotion.Create(startPos, targetPos, collapseDuration)
+                        .WithEase(collapseEase)
+                        .Bind(value => findViewRect.anchoredPosition = value);
+
+                    MotionHandle collapseButtonMotion = LMotion.Create(0f, 1f, collapseDuration)
+                        .WithEase(collapseEase)
+                        .Bind(value =>
+                        {
+                            collapseBtnRect.anchoredPosition = Vector2.Lerp(
+                                startButtonPos,
+                                targetButtonPos,
+                                value);
+
+                            collapseBtnRect.localRotation = Quaternion.Lerp(
+                                startRotation,
+                                targetRotation,
+                                value);
+                        });
+
                     await UniTask.WhenAll(
-                        LMotion.Create(startPos, targetPos, collapseDuration)
-                            .WithEase(collapseEase)
-                            .Bind(value => findViewRect.anchoredPosition = value)
-                            .ToUniTask(cancellationToken: token),
-
-                        LMotion.Create(0f, 1f, collapseDuration)
-                            .WithEase(collapseEase)
-                            .Bind(value =>
-                            {
-                                collapseBtnRect.anchoredPosition = Vector2.Lerp(
-                                    startButtonPos,
-                                    targetButtonPos,
-                                    value);
-
-                                collapseBtnRect.localRotation = Quaternion.Lerp(
-                                    startRotation,
-                                    targetRotation,
-                                    value);
-                            })
-                            .ToUniTask(cancellationToken: token)
+                        WaitMotionAsync(findViewMotion, token),
+                        WaitMotionAsync(collapseButtonMotion, token)
                     );
                 }
                 else
                 {
-                    await LMotion.Create(startPos, targetPos, collapseDuration)
+                    MotionHandle findViewMotion = LMotion.Create(startPos, targetPos, collapseDuration)
                         .WithEase(collapseEase)
-                        .Bind(value => findViewRect.anchoredPosition = value)
-                        .ToUniTask(cancellationToken: token);
+                        .Bind(value => findViewRect.anchoredPosition = value);
+
+                    await WaitMotionAsync(findViewMotion, token);
                 }
 
                 findViewCollapsed = targetCollapsed;
@@ -560,10 +561,30 @@ namespace ZYQ.Demo
                 return UniTask.CompletedTask;
             }
 
-            return LMotion.Create(from, to, duration)
+            MotionHandle handle = LMotion.Create(from, to, duration)
                 .WithEase(Ease.OutCubic)
-                .Bind(value => edgeHintText.alpha = value)
-                .ToUniTask(cancellationToken: token);
+                .Bind(value => edgeHintText.alpha = value);
+
+            return WaitMotionAsync(handle, token);
+        }
+
+        private static async UniTask WaitMotionAsync(MotionHandle handle, CancellationToken token)
+        {
+            try
+            {
+                while (handle.IsActive())
+                {
+                    token.ThrowIfCancellationRequested();
+                    await UniTask.Yield(PlayerLoopTiming.Update, token);
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                if (handle.IsActive())
+                    handle.Cancel();
+
+                throw;
+            }
         }
 
         private void HideEdgeHintImmediate()

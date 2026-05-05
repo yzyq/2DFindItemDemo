@@ -32,6 +32,7 @@ namespace ZYQ.Demo
             var panel = GetScenePanel<T>(type) ?? pool.Get<T>(type) ?? factory.Create<T>(type);
             if (panel == null) return null;
 
+            stack.Remove(panel);
             await panel.ShowAsync();
             stack.Push(panel);
 

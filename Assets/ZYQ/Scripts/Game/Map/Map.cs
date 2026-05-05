@@ -96,6 +96,7 @@ namespace ZYQ.Demo
             }
             else
             {
+                CancelAndDisposeGameplayCts();
                 StopLevelBgm();
             }
         }
