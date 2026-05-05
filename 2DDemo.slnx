@@ -1,0 +1,24 @@
+﻿<Solution>
+  <Project Path="spine-unity-examples.csproj" />
+  <Project Path="UniTask.csproj" />
+  <Project Path="UniTask.Linq.csproj" />
+  <Project Path="spine-unity-editor.csproj" />
+  <Project Path="spine-csharp.csproj" />
+  <Project Path="spine-unity.csproj" />
+  <Project Path="LitMotion.csproj" />
+  <Project Path="UniTask.Addressables.csproj" />
+  <Project Path="LitMotion.Tests.Runtime.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="LitMotion.Editor.csproj" />
+  <Project Path="LitMotion.Extensions.csproj" />
+  <Project Path="UniTask.TextMeshPro.csproj" />
+  <Project Path="LitMotion.Animation.csproj" />
+  <Project Path="LitMotion.Tests.Editor.csproj" />
+  <Project Path="LitMotion.Animation.Editor.csproj" />
+  <Project Path="spine-unity-examples-editor.csproj" />
+  <Project Path="UniTask.Editor.csproj" />
+  <Project Path="UniTask.DOTween.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="LitMotion.Tests.Benchmark.csproj" />
+</Solution>

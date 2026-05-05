@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12a2a565dcf7a4a8cbd78f9e5fd96dd0, type: 3}
+  m_Name: LevelDataSO
+  m_EditorClassIdentifier: Assembly-CSharp::ZYQ.Demo.LevelDatabase
+  levels:
+  - levelId: 1
+    sortOrder: 0
+    levelName: Level 1
+    levelIcon: {fileID: 0}
+    background: {fileID: -3994959000623168654, guid: e5330dfbbde09457286ffd67dc05c456, type: 3}
+    foreground: {fileID: -4916900573029191916, guid: 714a38ab840f34a72a70437446f9a00c, type: 3}
+    bgm: {fileID: 8300000, guid: 5b524f2756e8c4697b08fc7d7f85eb57, type: 3}
+    description: 
+    items:
+    - itemId: 1
+      itemName: "\u83DC\u5200"
+      uiIcon: {fileID: 3717538936128015801, guid: 6321f3461fc5447a398c8d2a4905a9ef, type: 3}
+      sceneIcon: {fileID: 0}
+      prefab: {fileID: 0}
+      description: 
+    - itemId: 2
+      itemName: "\u80E1\u841D\u535C"
+      uiIcon: {fileID: 3117472789991732735, guid: e741bcf71eef94a30a522bed6f478764, type: 3}
+      sceneIcon: {fileID: -5399858908368097576, guid: a7d18eb24064544debebc2c60619c7b3, type: 3}
+      prefab: {fileID: 0}
+      description: 
+    - itemId: 3
+      itemName: "\u8721\u70DB"
+      uiIcon: {fileID: -1639206636809774093, guid: 1e759cc51799744dd98be033ef91b49d, type: 3}
+      sceneIcon: {fileID: 0}
+      prefab: {fileID: 0}
+      description: 
+    - itemId: 4
+      itemName: "\u5E3D\u5B50"
+      uiIcon: {fileID: -9186017686416503977, guid: e7b798804d549408fa13cd79aa638e89, type: 3}
+      sceneIcon: {fileID: 0}
+      prefab: {fileID: 0}
+      description: 
+    - itemId: 5
+      itemName: "\u8089\u4E32"
+      uiIcon: {fileID: 6686645272946085545, guid: f4dd69279fbb3480fa4cf51b32c9dd22, type: 3}
+      sceneIcon: {fileID: 6316986450927117880, guid: 8889d232adc2b469db1ed2277420de0a, type: 3}
+      prefab: {fileID: 0}
+      description: 
+    - itemId: 6
+      itemName: "\u8C03\u6599"
+      uiIcon: {fileID: 7628785617526817216, guid: 3d1c8b788179d4152b1d3b2f8e269b5d, type: 3}
+      sceneIcon: {fileID: 0}
+      prefab: {fileID: 0}
+      description: 
+    - itemId: 7
+      itemName: "\u94A5\u5319"
+      uiIcon: {fileID: -132105861433280162, guid: 003b6fac4e8a3407fb80de35ef31ee0c, type: 3}
+      sceneIcon: {fileID: 2294673816544179768, guid: 3e7c7ecaccdce47c7b81116b73e87070, type: 3}
+      prefab: {fileID: 0}
+      description: 
+    - itemId: 8
+      itemName: "\u9C7C\u9AA8\u5934"
+      uiIcon: {fileID: -8121063646833985012, guid: c680a468fead34b7788b33775f3fcbd4, type: 3}
+      sceneIcon: {fileID: 6670538170152886267, guid: f291ea503b748428aad08c8fc8368671, type: 3}
+      prefab: {fileID: 0}
+      description: 
+    - itemId: 9
+      itemName: "\u7FBD\u6BDB"
+      uiIcon: {fileID: 5692629418661387920, guid: 5e27fdbf5d2f54c988bc0cf23f214c23, type: 3}
+      sceneIcon: {fileID: -5510141716984829124, guid: 967ffaa0017634a799de0ad5cc73c9e8, type: 3}
+      prefab: {fileID: 0}
+      description: 
+    - itemId: 10
+      itemName: "\u7EB8\u676F"
+      uiIcon: {fileID: -7178876676880628, guid: bcaf21a75f1754ff7bad2729e937b721, type: 3}
+      sceneIcon: {fileID: 0}
+      prefab: {fileID: 0}
+      description: 
+    targetItemIds: 0200000005000000070000000800000009000000

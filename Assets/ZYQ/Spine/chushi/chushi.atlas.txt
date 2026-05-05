@@ -1,0 +1,43 @@
+chushi.png
+size:1472,235
+filter:Linear,Linear
+pma:true
+c gebo1
+bounds:1167,8,87,97
+rotate:90
+c gebo2
+bounds:1344,98,99,135
+c gebo3
+bounds:1266,11,84,95
+offsets:0,0,85,95
+rotate:90
+c gebo4
+bounds:1061,2,104,93
+c jitui
+bounds:2,5,228,169
+rotate:90
+c jituicai
+bounds:590,17,216,123
+rotate:90
+c jituituopan
+bounds:1061,97,281,136
+offsets:1,1,283,138
+c shenti
+bounds:342,11,222,246
+offsets:2,53,224,336
+rotate:90
+c shou1
+bounds:1419,33,63,51
+offsets:1,1,65,53
+rotate:90
+c shou2
+bounds:1363,24,72,54
+offsets:0,1,73,55
+rotate:90
+c tou1
+bounds:715,23,169,210
+c tou2
+bounds:886,34,173,199
+cskj2
+bounds:173,7,226,167
+rotate:90

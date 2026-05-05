@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 4d9fc9d51c9834b1296143711a312e40
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1083491228762551519
+    second: fuwuyuan_0
+  - first:
+      213: 8437591347874022275
+    second: fuwuyuan_1
+  - first:
+      213: -6633546536633183745
+    second: fuwuyuan_2
+  - first:
+      213: 9071684985161545977
+    second: fuwuyuan_3
+  - first:
+      213: -6014899914878096769
+    second: fuwuyuan_4
+  - first:
+      213: -7394459808606411935
+    second: fuwuyuan_5
+  - first:
+      213: 4280497375094896327
+    second: fuwuyuan_6
+  - first:
+      213: 2257982797504974122
+    second: fuwuyuan_7
+  - first:
+      213: 4226068415377167784
+    second: fuwuyuan_8
+  - first:
+      213: 9088139196233336100
+    second: fuwuyuan_9
+  - first:
+      213: -2281751457575183969
+    second: fuwuyuan_10
+  - first:
+      213: 3498755829214411058
+    second: fuwuyuan_11
+  - first:
+      213: 8434137548541018254
+    second: fuwuyuan_12
+  - first:
+      213: -6778460190148749585
+    second: fuwuyuan_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fuwuyuan_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 72
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b4b50d77aa6f0f0800000000000000
+      internalID: -1083491228762551519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_1
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1
+        width: 91
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 383c0f960a8581570800000000000000
+      internalID: 8437591347874022275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_2
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1
+        width: 121
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff1d4fa2298e0f3a0800000000000000
+      internalID: -6633546536633183745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_3
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1
+        width: 85
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f87cce1e6915ed70800000000000000
+      internalID: 9071684985161545977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_4
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 107
+        width: 46
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ae92e4568c68ca0800000000000000
+      internalID: -6014899914878096769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_5
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 1
+        width: 101
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163ac1a4bf9916990800000000000000
+      internalID: -7394459808606411935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_6
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 107
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6f5800fa1676b30800000000000000
+      internalID: 4280497375094896327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_7
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 107
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d0a3a1467f55f10800000000000000
+      internalID: 2257982797504974122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_8
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 86
+        width: 68
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a5dd0745d206aa30800000000000000
+      internalID: 4226068415377167784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_9
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 86
+        width: 66
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425cacca27e8f1e70800000000000000
+      internalID: 9088139196233336100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_10
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 101
+        width: 66
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99508973279550e0800000000000000
+      internalID: -2281751457575183969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_11
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1
+        width: 185
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 239f624b3e31e8030800000000000000
+      internalID: 3498755829214411058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_12
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 53
+        width: 71
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8042971a631c0570800000000000000
+      internalID: 8434137548541018254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fuwuyuan_13
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1
+        width: 71
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe69e02fe521ee1a0800000000000000
+      internalID: -6778460190148749585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fuwuyuan_0: -1083491228762551519
+      fuwuyuan_1: 8437591347874022275
+      fuwuyuan_10: -2281751457575183969
+      fuwuyuan_11: 3498755829214411058
+      fuwuyuan_12: 8434137548541018254
+      fuwuyuan_13: -6778460190148749585
+      fuwuyuan_2: -6633546536633183745
+      fuwuyuan_3: 9071684985161545977
+      fuwuyuan_4: -6014899914878096769
+      fuwuyuan_5: -7394459808606411935
+      fuwuyuan_6: 4280497375094896327
+      fuwuyuan_7: 2257982797504974122
+      fuwuyuan_8: 4226068415377167784
+      fuwuyuan_9: 9088139196233336100
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,42 @@
+fuwuyuan.png
+size:728,152
+filter:Linear,Linear
+pma:true
+fwy gebo1
+bounds:554,13,52,64
+rotate:90
+fwy gebo2
+bounds:657,100,50,69
+rotate:90
+fwy gebo3
+bounds:486,13,66,52
+fwy jiao1
+bounds:371,5,39,44
+rotate:90
+fwy jiao2
+bounds:417,5,38,39
+fwy kaoji
+bounds:286,13,137,83
+rotate:90
+fwy qunbai
+bounds:165,10,119,140
+fwy shenti
+bounds:74,7,89,143
+fwy shou1
+bounds:457,11,33,27
+rotate:90
+fwy tou
+bounds:371,46,104,99
+rotate:90
+fwy tui1
+bounds:620,5,45,64
+rotate:90
+fwy tui2
+bounds:657,52,46,69
+rotate:90
+fwy tuopan
+bounds:472,67,183,83
+yinying
+bounds:2,2,148,70
+offsets:3,4,154,78
+rotate:90

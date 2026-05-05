@@ -1,0 +1,113 @@
+xiaonvhai.png
+size:207,1042
+filter:Linear,Linear
+pma:true
+h1
+bounds:110,197,63,95
+offsets:3,3,68,100
+rotate:90
+h10
+bounds:2,225,70,106
+offsets:2,1,76,112
+rotate:90
+h11
+bounds:2,297,68,107
+offsets:4,1,76,112
+rotate:90
+h12
+bounds:137,717,68,111
+offsets:0,1,72,112
+h13
+bounds:113,327,67,92
+offsets:1,2,68,96
+rotate:90
+h14
+bounds:109,130,65,93
+offsets:1,1,68,96
+rotate:90
+h15
+bounds:2,2,65,90
+offsets:1,2,68,96
+h16
+bounds:111,262,63,94
+offsets:2,2,68,100
+rotate:90
+h2
+bounds:2,94,62,100
+offsets:4,4,68,108
+rotate:90
+h3
+bounds:2,158,65,105
+offsets:3,3,72,112
+rotate:90
+h4
+bounds:2,367,66,109
+offsets:2,5,72,115
+rotate:90
+h5
+bounds:2,435,63,112
+offsets:3,3,68,117
+rotate:90
+h6
+bounds:2,500,65,114
+offsets:1,2,68,120
+rotate:90
+h7
+bounds:2,567,72,118
+offsets:1,2,76,124
+rotate:90
+h8
+bounds:2,641,72,122
+offsets:0,2,76,125
+rotate:90
+h9
+bounds:2,715,73,123
+offsets:4,1,80,127
+rotate:90
+nh doupeng1
+bounds:145,830,97,55
+rotate:90
+nh doupeng2
+bounds:127,675,40,77
+rotate:90
+nh doupeng3
+bounds:2,897,71,141
+rotate:90
+nh doupeng4
+bounds:152,969,44,36
+nh jiao1
+bounds:152,1007,33,51
+rotate:90
+nh jiao2
+bounds:104,96,32,39
+rotate:90
+nh lanzi
+bounds:122,499,76,83
+offsets:0,1,76,85
+rotate:90
+nh shenti1
+bounds:112,22,72,72
+nh shenti2
+bounds:2,790,105,133
+rotate:90
+nh shou1
+bounds:69,18,74,41
+rotate:90
+nh shou2
+bounds:145,929,38,60
+rotate:90
+nh shou3
+bounds:116,459,38,87
+rotate:90
+nh shou4
+bounds:112,2,18,38
+rotate:90
+nh tou
+bounds:126,577,96,79
+rotate:90
+nh toujin
+bounds:116,396,61,81
+rotate:90
+yinying
+bounds:2,970,148,70
+offsets:3,4,154,78

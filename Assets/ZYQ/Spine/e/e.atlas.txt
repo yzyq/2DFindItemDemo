@@ -1,0 +1,32 @@
+e.png
+size:198,249
+filter:Linear,Linear
+pma:true
+e chibang1
+bounds:100,108,39,69
+e chibang2
+bounds:155,180,41,67
+e shenti
+bounds:2,74,96,173
+e tui1
+bounds:100,179,53,68
+e tui2
+bounds:141,116,46,61
+e yan1
+bounds:128,101,5,5
+offsets:1,1,6,6
+e yan2
+bounds:128,101,5,5
+offsets:1,1,6,6
+e zui1
+bounds:152,29,37,45
+offsets:0,0,37,46
+e zui2
+bounds:100,91,26,15
+offsets:0,0,26,16
+yinying
+bounds:2,2,148,70
+offsets:3,4,154,78
+yumao
+bounds:141,76,50,38
+offsets:0,1,51,39
