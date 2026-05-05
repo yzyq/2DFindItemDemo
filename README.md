@@ -506,3 +506,8 @@ BGM 不会在重置时停止，会在游戏过程中持续播放。
 - 完成弹窗需要在 `UIMainPanel` Inspector 中拖入弹窗对象、文本和两个按钮。
 - 如果新增 Spine 对象，建议挂 `SpotlightSpineView` 并设置动画名；也可以让 `Map` 自动补组件，但手动配置更稳。
 
+## 自定义窗口
+
+![alt text](image.png)
+![alt text](image-1.png)
+
