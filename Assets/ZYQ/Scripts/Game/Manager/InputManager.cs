@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
 
 namespace ZYQ.Demo
 {
@@ -10,14 +11,16 @@ namespace ZYQ.Demo
 
         protected override void OnInit()
         {
+            EnhancedTouchSupport.Enable();
             Debug.Log("InputManager Init");
         }
 
         protected override void OnDispose()
         {
-
+            EnhancedTouchSupport.Disable();
             Debug.Log("InputManager OnDispose");
         }
+
 
         public override void Tick(float dt)
         {

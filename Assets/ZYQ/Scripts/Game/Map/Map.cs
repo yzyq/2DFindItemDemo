@@ -7,6 +7,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.InputSystem.EnhancedTouch;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -55,6 +58,9 @@ namespace ZYQ.Demo
         private float spotlightRadiusWorld;
         private float lastPinchDistance;
         private float nextEdgeHintTime;
+
+        private const float TapMoveThreshold = 30f;
+
 
         public void Initialize(AppContext context, HiddenObjectDemoConfig config)
         {
@@ -295,7 +301,13 @@ namespace ZYQ.Demo
         private void BindSceneTargets()
         {
             targets.Clear();
+
+            Debug.Log($"BindSceneTargets: targetViews before={targetViews.Count}, config.targets={config.targets?.Count ?? -1}");
+
             EnsureSerializedSceneReferences();
+
+            Debug.Log($"BindSceneTargets: targetViews after={targetViews.Count}");
+
             var sceneTargets = targetViews;
 
             for (int i = 0; i < sceneTargets.Count; i++)
@@ -306,11 +318,18 @@ namespace ZYQ.Demo
 
                 var targetConfig = ResolveTargetConfig(view, i);
                 if (targetConfig == null)
+                {
+                    Debug.LogWarning($"Target config not found for view={view.name}, index={i}");
                     continue;
+                }
 
                 view.Bind(targetConfig, config);
                 targets.Add(view);
+
+                Debug.Log($"Bind target success: view={view.name}, id={targetConfig.id}");
             }
+
+            Debug.Log($"BindSceneTargets result: targets.Count={targets.Count}");
 
             if (targets.Count == 0)
                 Debug.LogWarning("Map: Map 下没有找到可绑定的 HiddenObjectTargetView，请把组件挂到已摆放的找物/Spine 对象上。", this);
@@ -540,7 +559,12 @@ namespace ZYQ.Demo
             if (touches.Count == 1)
             {
                 var touch = touches[0];
-                if (touch.began && IsPointerOverUi(touch.touchId)) return;
+                if (touch.began && IsPointerOverUi(touch.touchId))
+                {
+                    Debug.Log($"Touch over UI, id={touch.touchId}");
+                    return;
+                }
+
 
                 HandlePointer(touch.position, touch.delta, touch.began, touch.ended, dt);
                 return;
@@ -569,31 +593,126 @@ namespace ZYQ.Demo
             }
         }
 
+        //private List<PointerTouch> GetActiveTouches()
+        //{
+        //    var result = new List<PointerTouch>(2);
+        //    var touchscreen = Touchscreen.current;
+
+        //    if (touchscreen == null)
+        //    {
+        //        Debug.Log("Touchscreen.current == null");
+        //        return result;
+        //    }
+
+        //    foreach (var touch in touchscreen.touches)
+        //    {
+        //        bool pressed = touch.press.isPressed;
+        //        bool began = touch.press.wasPressedThisFrame;
+        //        bool ended = touch.press.wasReleasedThisFrame;
+
+        //        if (pressed || began || ended)
+        //        {
+        //            Debug.Log($"touch id={touch.touchId.ReadValue()}, pressed={pressed}, began={began}, ended={ended}, pos={touch.position.ReadValue()}, delta={touch.delta.ReadValue()}");
+        //        }
+
+        //        bool active = pressed || ended;
+        //        if (!active) continue;
+
+        //        result.Add(new PointerTouch
+        //        {
+        //            touchId = touch.touchId.ReadValue(),
+        //            position = touch.position.ReadValue(),
+        //            delta = touch.delta.ReadValue(),
+        //            began = began,
+        //            ended = ended
+        //        });
+
+        //        if (result.Count >= 2) break;
+        //    }
+
+        //    return result;
+        //}
+
         private List<PointerTouch> GetActiveTouches()
         {
             var result = new List<PointerTouch>(2);
-            var touchscreen = Touchscreen.current;
-            if (touchscreen == null) return result;
 
-            foreach (var touch in touchscreen.touches)
+            foreach (var touch in Touch.activeTouches)
             {
-                bool active = touch.press.isPressed || touch.press.wasReleasedThisFrame;
-                if (!active) continue;
+                bool ended = touch.phase == UnityEngine.InputSystem.TouchPhase.Ended ||
+                             touch.phase == UnityEngine.InputSystem.TouchPhase.Canceled;
 
                 result.Add(new PointerTouch
                 {
-                    touchId = touch.touchId.ReadValue(),
-                    position = touch.position.ReadValue(),
-                    delta = touch.delta.ReadValue(),
-                    began = touch.press.wasPressedThisFrame,
-                    ended = touch.press.wasReleasedThisFrame
+                    touchId = touch.touchId,
+                    position = touch.screenPosition,
+                    delta = touch.delta,
+                    began = touch.phase == UnityEngine.InputSystem.TouchPhase.Began,
+                    ended = ended
                 });
 
-                if (result.Count >= 2) break;
+                if (result.Count >= 2)
+                    break;
             }
 
             return result;
         }
+
+
+
+        //private void HandlePointer(Vector2 screenPosition, Vector2 screenDelta, bool began, bool ended, float dt)
+        //{
+        //    var world = cameraRig.ScreenToWorldPoint(screenPosition);
+
+        //    if (began)
+        //    {
+        //        pointerDown = true;
+        //        pointerMoved = false;
+        //        pointerDownScreen = screenPosition;
+        //        draggingSpotlight = false;
+        //        draggingMap = false;
+        //    }
+
+        //    if (!began && !ended)
+        //    {
+        //        if (pointerDown && !pointerMoved && Vector2.Distance(pointerDownScreen, screenPosition) > 8f)
+        //        {
+        //            pointerMoved = true;
+        //            draggingSpotlight = spotlightEnabled && spotlightMask != null &&
+        //                                Vector2.Distance(world, spotlightMask.transform.position) <= spotlightRadiusWorld * 1.15f;
+        //            draggingMap = !draggingSpotlight;
+        //        }
+
+        //        if (draggingSpotlight)
+        //        {
+        //            var desired = spotlightMask.transform.position + cameraRig.ScreenToWorldDelta(screenDelta) * config.spotlightDragSpeed;
+        //            var next = cameraRig.ClampSpotlightWorldPosition(desired, spotlightRadiusWorld);
+        //            if ((desired - next).sqrMagnitude > 0.0001f)
+        //                ShowEdgeLimitHint();
+
+        //            spotlightMask.transform.position = next;
+        //            spotlightVisual.position = next;
+        //            cameraRig.FollowSpotlightNearScreenEdge(next, dt);
+        //        }
+        //        else if (draggingMap)
+        //        {
+        //            cameraRig.DragByScreenDelta(screenDelta);
+        //            if (cameraRig.IsMapBeyondBounds(0.02f))
+        //                ShowEdgeLimitHint();
+        //        }
+        //    }
+
+        //    if (ended)
+        //    {
+        //        if (!pointerMoved)
+        //            TryClickTarget(world).Forget();
+
+        //        pointerDown = false;
+        //        pointerMoved = false;
+        //        draggingMap = false;
+        //        draggingSpotlight = false;
+        //    }
+        //}
 
         private void HandlePointer(Vector2 screenPosition, Vector2 screenDelta, bool began, bool ended, float dt)
         {
@@ -610,7 +729,9 @@ namespace ZYQ.Demo
 
             if (!began && !ended)
             {
-                if (pointerDown && !pointerMoved && Vector2.Distance(pointerDownScreen, screenPosition) > 8f)
+                float moveDistance = Vector2.Distance(pointerDownScreen, screenPosition);
+
+                if (pointerDown && !pointerMoved && moveDistance > TapMoveThreshold)
                 {
                     pointerMoved = true;
                     draggingSpotlight = spotlightEnabled && spotlightMask != null &&
@@ -622,6 +743,7 @@ namespace ZYQ.Demo
                 {
                     var desired = spotlightMask.transform.position + cameraRig.ScreenToWorldDelta(screenDelta) * config.spotlightDragSpeed;
                     var next = cameraRig.ClampSpotlightWorldPosition(desired, spotlightRadiusWorld);
+
                     if ((desired - next).sqrMagnitude > 0.0001f)
                         ShowEdgeLimitHint();
 
@@ -632,6 +754,7 @@ namespace ZYQ.Demo
                 else if (draggingMap)
                 {
                     cameraRig.DragByScreenDelta(screenDelta);
+
                     if (cameraRig.IsMapBeyondBounds(0.02f))
                         ShowEdgeLimitHint();
                 }
@@ -639,7 +762,9 @@ namespace ZYQ.Demo
 
             if (ended)
             {
-                if (!pointerMoved)
+                bool isTap = pointerDown && Vector2.Distance(pointerDownScreen, screenPosition) <= TapMoveThreshold;
+
+                if (isTap)
                     TryClickTarget(world).Forget();
 
                 pointerDown = false;
@@ -648,6 +773,7 @@ namespace ZYQ.Demo
                 draggingSpotlight = false;
             }
         }
+
 
         private void ShowEdgeLimitHint()
         {
@@ -1032,8 +1158,31 @@ namespace ZYQ.Demo
             target.targets.Add(CreateTarget("rouchuan", "肉串", "rouchuan", "ui_rouchuan", new Vector2(0.78f, 0.66f), "huo1/huo_SkeletonData.asset"));
             target.targets.Add(CreateTarget("yaoshi", "钥匙", "yaoshi", "ui_yaoshi", new Vector2(0.31f, 0.74f), "e/e_SkeletonData.asset"));
             target.targets.Add(CreateTarget("tiaoliao", "调料", "ui_tiaoliao", "ui_tiaoliao", new Vector2(0.56f, 0.25f), null));
+#else
+    if (target.targets.Count > 0) return;
+
+    target.targets.Add(CreateRuntimeTarget("huluobo", "胡萝卜", new Vector2(0.24f, 0.34f)));
+    target.targets.Add(CreateRuntimeTarget("yugutou", "鱼骨头", new Vector2(0.68f, 0.38f)));
+    target.targets.Add(CreateRuntimeTarget("yumao", "羽毛", new Vector2(0.42f, 0.58f)));
+    target.targets.Add(CreateRuntimeTarget("rouchuan", "肉串", new Vector2(0.78f, 0.66f)));
+    target.targets.Add(CreateRuntimeTarget("yaoshi", "钥匙", new Vector2(0.31f, 0.74f)));
+    target.targets.Add(CreateRuntimeTarget("tiaoliao", "调料", new Vector2(0.56f, 0.25f)));
 #endif
         }
+
+        private HiddenObjectTargetConfig CreateRuntimeTarget(string id, string displayName, Vector2 position)
+        {
+            return new HiddenObjectTargetConfig
+            {
+                id = id,
+                displayName = displayName,
+                normalizedPosition = position,
+                worldSize = Vector2.zero,
+                hasInteractAnimation = false
+            };
+        }
+
+
 
 #if UNITY_EDITOR
         private HiddenObjectTargetConfig CreateTarget(string id, string displayName, string worldSpriteName, string iconSpriteName, Vector2 position, string skeletonPath)

@@ -3019,7 +3019,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5215428963035839696}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3028,7 +3028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -436, y: -581}
+  m_AnchoredPosition: {x: -436, y: -161}
   m_SizeDelta: {x: 107, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1749998342782208279
@@ -4285,8 +4285,8 @@ RectTransform:
   - {fileID: 3516024282089586221}
   - {fileID: 550203802247177906}
   - {fileID: 5621804583315842496}
-  - {fileID: 1687203841519016014}
   - {fileID: 843393935}
+  - {fileID: 1687203841519016014}
   - {fileID: 710117899}
   m_Father: {fileID: 1511612484}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5179,7 +5179,12 @@ MonoBehaviour:
   - {fileID: 7547782525165646542}
   - {fileID: 646034989623539856}
   spotlightSpineViews: []
-  targetViews: []
+  targetViews:
+  - {fileID: 7911050239300126226}
+  - {fileID: 435308305779020638}
+  - {fileID: 1979925195446378165}
+  - {fileID: 108002572247875240}
+  - {fileID: 2582498816266082108}
   spotlightMask: {fileID: 1896104758}
   spotlightVisual: {fileID: 7700000000000001002}
   sfxSource: {fileID: 0}
